@@ -12,6 +12,13 @@ export default {
         foreground: "var(--foreground)",
         primary: "#5277db",
       },
+      fontFamily: {
+        roboto: ['Roboto', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif'],
+        montserrat: ['Montserrat', 'sans-serif'],
+        openSans: ['Open Sans', 'sans-serif'],
+        lato: ['Lato', 'sans-serif'],
+      },
     },
   },
   plugins: [
