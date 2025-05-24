@@ -58,7 +58,7 @@ export default function NavigationBar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-[#0A0A0A] p-4 absolute w-full z-10">
+        <div className="md:hidden bg-[#0A0A0A] p-4 absolute w-full z-50">
           {['Home', 'Products', 'Blog', 'Contact'].map((item) => (
             <div
               key={item}

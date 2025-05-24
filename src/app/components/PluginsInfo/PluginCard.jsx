@@ -35,7 +35,7 @@ const PluginCard = ({
 
 
       {/* Text Content */}
-      <div className="absolute bottom-0 p-4 w-full text-white z-10 space-y-2">
+      <div className="absolute bottom-0 p-4 w-full text-white space-y-2">
         <h2 className="text-lg font-semibold leading-tight">{title}</h2>
         <p className="text-sm opacity-90 leading-snug">{description}</p>
 
