@@ -18,6 +18,7 @@ export default {
         montserrat: ['Montserrat', 'sans-serif'],
         openSans: ['Open Sans', 'sans-serif'],
         lato: ['Lato', 'sans-serif'],
+        figtree: ['var(--font-figtree)', 'sans-serif'],
       },
     },
   },

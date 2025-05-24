@@ -39,7 +39,7 @@ export default function NavigationBar() {
             {['Home', 'Products', 'Blog', 'Contact'].map((item) => (
               <div
                 key={item}
-                className={`${poppins.className} text-primary hover:text-primary/80 transition-colors cursor-pointer`}
+                className={` text-primary font-light hover:text-primary/80 transition-colors cursor-pointer`}
               >
                 {item}
               </div>
