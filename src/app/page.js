@@ -11,15 +11,17 @@ import ReviewCard from "./components/Reviews/ReviewCard";
 import PromoReviewCard from "./components/Reviews/PromoReviewCard";
 import ReviewCarousel from "./components/Reviews/ReviewCarousel";
 import Footer from "./components/Footer/footer";
+import Login from "./components/Login/Login/Login";
 
 export default function Home() {
   return (
     <div className="flex flex-col items-center justify-items-center min-h-screen ">
       <NavigationBar />
       <Header />
-            <About />
+           
 
       <PluginPreview />
+      <div className="mt-32"/>
       <Category />
       <TopSeller />
       <ReviewCarousel />
@@ -27,5 +29,6 @@ export default function Home() {
       <Footer/>
       
     </div>
+    
   );
 }

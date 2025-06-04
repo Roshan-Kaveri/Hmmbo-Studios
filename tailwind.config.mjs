@@ -31,6 +31,9 @@ export default {
           "background-clip": "text",
           color: "transparent",
         },
+        ".bg-secondary-gradient": {
+          background: "linear-gradient(to right, #20B478, #58B83A)",
+        },
       });
     },
   ],

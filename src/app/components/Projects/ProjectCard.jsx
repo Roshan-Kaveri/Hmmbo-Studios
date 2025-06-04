@@ -1,19 +1,55 @@
 import React from "react";
 
-export default function ProjectCard({ title, description, imageUrl }) {
+export default function ProjectCard({
+  title,
+  description,
+  imageUrl,
+  price = "FREE",
+  oldPrice,
+  onAddToCart,
+  isOnSale,
+}) {
   return (
-    <div className="relative group max-w-sm h-48  rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105">
-      {/* Image with full coverage */}
-      <img
-        className="w-full h-full object-cover brightness-[0.3] group-hover:brightness-[0.2] transition-all duration-300"
-        src={imageUrl}
-        alt={title}
-      />
+    <div className="max-w-sm rounded-xl shadow-md overflow-hidden  text-white">
+      {/* Image Section */}
+      <div className="relative">
+        <img
+          src={imageUrl}
+          alt={title}
+          className="w-full object-cover aspect-square"
+        />
+        {isOnSale && (
+          <div className="absolute top-2 left-2 bg-red-500 text-white text-xs font-semibold px-2 py-1 rounded">
+            Sale
+          </div>
+        )}
+      </div>
 
-      {/* Text overlay */}
-      <div className="absolute inset-0 p-6 flex flex-col justify-end">
-        <h3 className="font-bold text-xl mb-2 text-white">{title}</h3>
-        <p className="text-gray-200 text-base opacity-90">{description}</p>
+      {/* Content Section */}
+      <div className="p-4">
+        <h3 className="text-xl font-bold  text-white">{title}</h3>
+        <div className="flex">
+          
+        </div>
+        <p className="text-sm text-gray-400 mb-4">{description}</p>
+
+        {/* Price + Button */}
+        <div className="flex items-center justify-between">
+          <div className="text-base">
+            {oldPrice && (
+              <span className="line-through text-gray-500 mr-2">
+                {oldPrice}
+              </span>
+            )}
+            <span className="text-lg font-bold text-white">{price}</span>
+          </div>
+          <button
+            onClick={onAddToCart}
+            className="bg-primary hover:bg-primary/80 text-white font-semibold px-4 py-2 rounded-lg transition-colors"
+          >
+            Add to cart
+          </button>
+        </div>
       </div>
     </div>
   );

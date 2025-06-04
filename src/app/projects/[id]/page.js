@@ -5,6 +5,7 @@ import axios from "axios";
 import NavigationBar from "../../components/Navigation/NavigationBar";
 import SearchBar from "../../components/Projects/SearchBar";
 import ProjectCard from "../../components/Projects/ProjectCard";
+import Footer from "@/app/components/Footer/footer";
 
 export default function Projects() {
     const [searchTerm, setSearchTerm] = useState("");
@@ -41,6 +42,7 @@ export default function Projects() {
                 </div>
               
             </div>
+           
         </>
     );
 }

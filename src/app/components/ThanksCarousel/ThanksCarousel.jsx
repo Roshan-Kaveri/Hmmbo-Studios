@@ -15,9 +15,9 @@ const Thanks = () => {
 
   return (
     <div
-      className={`${poppins.className} p-4 flex flex-col justify-center items-center w-full min-h-screen select-none`}
+      className={`p-4 flex flex-col justify-center items-center w-full min-h-screen select-none`}
     >
-      <h3 className="self-center font-black text-3xl md:text-6xl leading-[68px] text-secondary-gradient mb-12">
+      <h3 className="self-center font-black text-3xl md:text-5xl leading-[68px] text-secondary-gradient mb-12">
         Thanks for Sharing Our Work
       </h3>
 

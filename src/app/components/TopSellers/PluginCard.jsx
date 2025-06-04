@@ -25,7 +25,7 @@ const PluginCard = ({ title, description, price, originalPrice, image }) => {
             )}
             <p className="text-base font-bold text-white">${price}</p>
           </div>
-          <button className="bg-primary text-black px-3 py-1 rounded text-xs font-medium hover:bg-gray-200 transition">
+          <button className="bg-primary text-black px-3 py-2 rounded text-xs font-medium hover:bg-gray-200 transition">
             ADD TO CART
           </button>
         </div>
