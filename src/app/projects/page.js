@@ -4,7 +4,6 @@ import Category from "../components/Category/Category";
 import Footer from "../components/Footer/footer";
 import NavigationBar from "../components/Navigation/NavigationBar";
 import ProjectCard from "../components/Projects/ProjectCard";
-import projects from "../components/project";
 
 import Link from "next/link";
 
