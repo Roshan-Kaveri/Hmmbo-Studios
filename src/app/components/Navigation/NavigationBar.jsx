@@ -31,7 +31,7 @@ export default function NavigationBar() {
       Home: '/',
     Projects: '/projects',
    Blog: '/blog',
-    Contact: '/contact',
+    Help: '/help',
     };
 
   return (
