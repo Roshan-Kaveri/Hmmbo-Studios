@@ -26,7 +26,9 @@ const Category = () => {
         {items.map((item, index) => (
           <Link
             key={index}
-            href={`/projects?category=${encodeURIComponent(item.name)}`}
+            href={`/projects/category/${encodeURIComponent(
+              item.name.toLowerCase().replace(/\s+/g, "-")
+            )}`}
             className="overflow-hidden shadow-md block group transition-transform hover:scale-105"
           >
             <Image
@@ -34,7 +36,6 @@ const Category = () => {
               alt={item.name}
               className="w-full h-64 object-cover group-hover:brightness-75 transition-all duration-300"
             />
-           
           </Link>
         ))}
       </div>

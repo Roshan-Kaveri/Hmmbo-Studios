@@ -1,14 +1,14 @@
-// app/projects/page.tsx
+// app/projects/category/[category]/page.jsx
 
-import Category from "../components/Category/Category";
-import Footer from "../components/Footer/footer";
-import NavigationBar from "../components/Navigation/NavigationBar";
-import ProjectCard from "../components/Projects/ProjectCard";
-import projects from "../components/project";
+import NavigationBar from "@/app/components/Navigation/NavigationBar";
 
 import Link from "next/link";
+import Category from "@/app/components/Category/Category";
+import ProjectCard from "@/app/components/Projects/ProjectCard";
+import Footer from "@/app/components/Footer/footer";
 
-export default function AllProjectsPage() {
+export default function ProjectsByCategory({ params }) {
+  const decodedCategory = decodeURIComponent(params.category).replace(/-/g, " ");
 
 const projects = [
   {
@@ -43,6 +43,13 @@ const projects = [
   },
 ];
 
+
+  const filteredProjects = projects.filter(
+    (project) =>
+      decodedCategory.toLowerCase() === "all" ||
+      project.category.toLowerCase() === decodedCategory.toLowerCase()
+  );
+
   return (
     <>
       <NavigationBar />
@@ -53,24 +60,29 @@ const projects = [
       <div className="container mx-auto px-4 py-8 mb-32">
         <div className="flex flex-col mt-20 ml-12 mr-12">
           <h3 className="text-2xl font-bold mb-4 text-secondary-gradient">
-            ALL PROJECTS
+            CATEGORY: {decodedCategory.toUpperCase()}
           </h3>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ml-12 mr-12">
-          {projects.map((project, index) => (
-            <Link href={`/projects/${index}`} key={index}>
-              <ProjectCard
-                title={project.title}
-                description={project.description}
-                imageUrl={project.image_url}
-                category={project.category}
-              />
-            </Link>
-          ))}
+          {filteredProjects.length === 0 ? (
+            <div className="col-span-full text-center h-40 text-gray-500 text-lg font-medium">
+              No content found in this category.
+            </div>
+          ) : (
+            filteredProjects.map((project, index) => (
+              <Link href={`/projects/${index}`} key={index}>
+                <ProjectCard
+                  title={project.title}
+                  description={project.description}
+                  imageUrl={project.image_url}
+                  category={project.category}
+                />
+              </Link>
+            ))
+          )}
         </div>
       </div>
-
       <Footer />
     </>
   );
